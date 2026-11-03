@@ -1,0 +1,96 @@
+# =============================================================================
+# Git Ignore Configuration for Signature Forgery Detection Project
+# =============================================================================
+
+# --- Byte-compiled / Optimized Python Files ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.dylib
+*.dll
+
+# --- Virtual Environments ---
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# --- Large Dataset Files (CEDAR Raw Signatures) ---
+# Do not upload thousands of high-resolution signature images to GitHub
+data/signatures/
+data/full_org/
+data/full_forg/
+signatures/
+*.rar
+*.zip
+*.tar
+*.tar.gz
+*.7z
+
+# Keep directory structure in git
+!data/.gitkeep
+
+# --- Heavy Trained Model Weights / Checkpoints ---
+# Binary checkpoint files (~30MB+) should be hosted via releases or Git LFS
+models/*.pth
+models/*.pt
+models/*.bin
+models/*.onnx
+models/*.weights
+
+# Explicitly KEEP configuration files and evaluation plots
+!models/threshold.json
+!models/test_writer_ids.json
+!models/*.png
+
+# --- Jupyter Notebook & Evaluation Caches ---
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# --- Testing & Profiling ---
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# --- Streamlit Cache & Local Configurations ---
+.streamlit/secrets.toml
+.streamlit/*.log
+
+# --- Logs & Temporary Files ---
+*.log
+*.tmp
+*.temp
+tmp/
+temp/
+
+# --- Operating System Generated Files ---
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+
+# --- IDEs and Text Editors ---
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
